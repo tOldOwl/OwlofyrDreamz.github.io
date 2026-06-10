@@ -95,7 +95,23 @@ body {
 .box-content h3 { 
     margin-top: 0; 
 }
+.box-section {
+    display: flex;
+    flex-wrap: wrap;        /* Allows items to drop to the next line on small screens */
+    gap: 20px;              /* Adds clean spacing between the text and the photo */
+}
 
+.box-content {
+    flex: 1 1 300px;        /* Allows boxes to shrink/grow, with a safe minimum width of 300px */
+    box-sizing: border-box;
+}
+
+.box-content img {
+    width: 100%;            /* Forces image to scale dynamically with the container */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 /* Footer Styles */
 .ftr {
     border: 1px solid #000000;
