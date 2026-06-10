@@ -85,6 +85,13 @@ body {
     padding: 15px;
 }
 
+.box-content {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
 .box-content h3 { 
     margin-top: 0; 
 }
