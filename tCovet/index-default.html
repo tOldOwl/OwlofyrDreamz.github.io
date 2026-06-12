@@ -1,0 +1,88 @@
+<html> 
+<head> 
+  <title>theCoven</title> 
+  <link href="style.css" rel="stylesheet"> 
+  <script src="cauldron.js" defer></script> 
+  <style> 
+    /* This rule styles every button inside the menu at the exact same time */
+    .button-menu li a {
+      display: block; 
+      text-decoration: none; 
+      color: #000000; 
+      background-color: #f0f0f0; 
+      border: 1px solid #000000; 
+      padding: 10px 0; 
+      font-weight: bold;
+    }
+  </style> 
+</head> 
+<body style="text-align:center; margin: 0; display: flex; flex-direction: column; min-height: 100vh;"> 
+
+  <header class="hdr" style="letter-spacing: 0.3em; border: 1px solid #000000; padding: 10px 0;"> 
+    <div class="col-12"> 
+      <h1 style="margin: 0; font-size: 4rem;"><em>theCoven</em></h1> 
+    </div> 
+  </header> 
+
+  <menu class="menu" style="margin: 0; padding: 15px 20px; text-align: center; border: 1px solid #000000; border-top: none; box-sizing: border-box;"> 
+    <div class="row"> 
+      <div class="col-12"> 
+        <nav> 
+          <!-- The class "button-menu" applies the style to all child elements automatically -->
+          <ul class="button-menu" style="list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: space-between; width: 100%; gap: 10px;">
+            <li style="flex: 1;"><a href="art/index-art.html">Art</a></li> 
+            <li style="flex: 1;"><a href="people/index-people.html">People</a></li> 
+            <li style="flex: 1;"><a href="movie.html">Cinema</a></li> 
+            <li style="flex: 1;"><a href="histy.html">History</a></li>  
+            <li style="flex: 1;"><a href="index.html">Home</a></li> 
+            <li style="flex: 1;"><a href="music.html">Music</a></li> 
+            <li style="flex: 1;"><a href="philo.html">Philosophy</a></li> 
+            <li style="flex: 1;"><a href="scinc.html">Science</a></li> 
+            <li style="flex: 1;"><a href="vidg.html">Video Games</a></li> 
+          </ul> 
+        </nav> 
+      </div> 
+    </div> 
+  </menu> 
+
+  <main class="main" style="flex: 1; display: flex; width: 100%; box-sizing: border-box;"> 
+    <div class="grid-row" style="display: flex; justify-content: space-between; width: 100%; box-sizing: border-box; padding: 20px; height: 100%;"> 
+      
+      <div class="box-section" style="flex: 1; height: 100%; text-align: left; border: 1px solid #000000; padding: 15px; box-sizing: border-box;"> 
+        <div class="box-content"> 
+          <h3 style="margin-top: 0;">Section One</h3> 
+          <p>Left column content placeholder.</p> 
+        </div> 
+      </div> 
+
+      <!-- Middle Spacer Divs create artificial gaps between full-width flex items -->
+      <div style="width: 20px;"></div>
+
+      <div class="box-section" style="flex: 1; height: 100%; text-align: left; border: 1px solid #000000; padding: 15px; box-sizing: border-box;"> 
+        <div class="box-content"> 
+          <h3 style="margin-top: 0;">Section Two</h3> 
+          <p>Middle column content placeholder.</p> 
+        </div> 
+      </div> 
+
+      <div style="width: 20px;"></div>
+
+      <div class="box-section" style="flex: 1; height: 100%; text-align: left; border: 1px solid #000000; padding: 15px; box-sizing: border-box;"> 
+        <div class="box-content"> 
+          <h3 style="margin-top: 0;">Section Three</h3> 
+          <p>Right column content placeholder.</p> 
+        </div> 
+      </div> 
+
+    </div> 
+  </main> 
+
+  <footer class="ftr" style="border: 1px solid #000000; padding: 15px 0; border-bottom: none;"> 
+    <div class="col-12"> 
+      <span class="site-name" style="margin-right: 15px; font-weight: bold;">theCoven</span> 
+      <span class="copyright">&copy; 2026 All rights reserved.</span> 
+    </div> 
+  </footer> 
+
+</body> 
+</html>

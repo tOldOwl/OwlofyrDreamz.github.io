@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Art</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="cauldron.js" defer></script>
+  <style>
+    /* This rule styles every button inside the menu at the exact same time */
+    .button-menu li a {
+      display: block;
+      text-decoration: none;
+      color: #000000;
+      background-color: #f0f0f0;
+      border: 1px solid #000000;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body style="text-align:center; margin: 0; display: flex; flex-direction: column; min-height: 100vh;">
+
+  <!-- Header Section -->
+  <header class="hdr" style="letter-spacing: 0.3em; border: 1px solid #000000; padding: 10px 0;">
+    <div class="col-12">
+      <h1 style="margin: 0; font-size: 4rem;"><em>Art</em></h1>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <menu class="menu" style="margin: 0; padding: 15px 20px; text-align: center; border: 1px solid #000000; border-top: none; box-sizing: border-box;">
+    <div class="row">
+      <div class="col-12">
+        <nav>
+          <!-- The class "button-menu" applies the style to all child elements automatically -->
+          <ul class="button-menu" style="list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: space-between; width: 100%; gap: 10px;">
+            <li style="flex: 1;"><a href="art/index-art.html">3DArt</a></li>
+            <li style="flex: 1;"><a href=".html">Contemporary</a></li>
+            <li style="flex: 1;"><a href=".html">Cubism</a></li>
+            <li style="flex: 1;"><a href=".html">Fauve</a></li>
+            <li style="flex: 1;"><a href="../index.html">Home</a></li>
+            <li style="flex: 1;"><a href=".html">Surrealism</a></li>
+            <li style="flex: 1;"><a href=".html">Impressionism</a></li>
+            <li style="flex: 1;"><a href=".html">Enlightenism</a></li>
+            <li style="flex: 1;"><a href=".html">Dutch</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </menu>
+
+<!-- Main Content Body -->
+<main class="main" style="flex: 1; display: flex; flex-direction: column; width: 100%; box-sizing: border-box;">
+  <!-- flex: 1 stretches the layout row vertically to fill the remaining screen space -->
+  <div class="grid-row" style="display: flex; flex: 1; justify-content: space-between; align-items: stretch; width: 100%; box-sizing: border-box; padding: 20px; gap: 20px;">
+    
+    <!-- Column 1 -->
+    <div class="box-section" style="flex: 1; text-align: left; border: 1px solid #000000; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column;">
+      <div class="box-content" style="display: flex; flex-direction: column; flex: 1;">
+        <h3 style="margin-top: 0; margin-bottom: 10px;">Art Electronic</h3>
+        <!-- Text is on top -->
+        <p style="margin: 0 0 15px 0;">Left column content placeholder.</p>
+        <!-- Image expands downwards and stays aligned to the bottom -->
+        <img src="img/corpus-girl-3d.jpg" alt="Art Electronic Display" style="width: 100%; flex: 1; min-height: 200px; object-fit: cover; border: 1px solid #000000; margin-top: auto;">
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="box-section" style="flex: 1; text-align: left; border: 1px solid #000000; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column;">
+      <div class="box-content" style="display: flex; flex-direction: column; flex: 1;">
+        <h3 style="margin-top: 0; margin-bottom: 10px;">Art Contemporary</h3>
+        <!-- Text is on top -->
+        <p style="margin: 0 0 15px 0;">Middle column content placeholder. If this column grows taller due to extra content, the surrounding columns will scale up to match it instantly.</p>
+        <!-- Image expands downwards and stays aligned to the bottom -->
+        <img src="img/chloe-442.png" alt="Art Contemporary Display" style="width: 100%; flex: 1; min-height: 200px; object-fit: cover; border: 1px solid #000000; margin-top: auto;">
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="box-section" style="flex: 1; text-align: left; border: 1px solid #000000; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column;">
+      <div class="box-content" style="display: flex; flex-direction: column; flex: 1;">
+        <h3 style="margin-top: 0; margin-bottom: 10px;">Art History</h3>
+        <!-- Text is on top -->
+        <p style="margin: 0 0 15px 0;">Right column content placeholder.</p>
+        <!-- Image expands downwards and stays aligned to the bottom -->
+        <img src="img/1925 Pierot Playing the Guitar.jpg" alt="Art History Display" style="width: 100%; flex: 1; min-height: 200px; object-fit: cover; border: 1px solid #000000; margin-top: auto;">
+      </div>
+    </div>
+
+  </div>
+</main>
+
+  <!-- Footer Section -->
+  <footer class="ftr" style="border: 1px solid #000000; padding: 15px 0; border-bottom: none;">
+    <div class="col-12">
+      <span class="site-name" style="margin-right: 15px; font-weight: bold;">theCoven</span>
+      <span class="copyright">&copy; 2026 All rights reserved.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
