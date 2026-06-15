@@ -11,7 +11,9 @@ body {
   flex-direction: column; 
   min-height: 100vh; 
 }
-
+main {
+  padding: 20px 0; /* 20px top/bottom, 0 left/right */
+}
 /* ==========================================================================
    2. Header & Navigation
    ========================================================================== */
@@ -25,8 +27,7 @@ body {
   margin: 0; 
   font-size: 4rem; 
 }
-
-.menu-nav { 
+.menu-nav {
   padding: 10px; 
   border: 1px solid #000; 
   border-top: none; 
@@ -66,8 +67,14 @@ body {
 .main { 
   flex: 1; 
   margin: 20px 0; 
-  width: 100%; 
+  width: 100%;
 }
+
+.menu {
+  padding: 10px; 
+}
+
+
 .eatg-section h2 {
   margin-top: 0;
 }
@@ -77,15 +84,82 @@ body {
   box-sizing: border-box;
 }
 
-/* The primary row layout: Aligns all direct child items in a clean line */
-.grid-row { 
+/* 1. Force the row to wrap exactly after 4 recipes */
+.grid-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
   width: 100%;
 }
 
+/* 2. Target and shrink ONLY the ingredients text */
+.recipe .ingred p {
+  font-size: 11px; /* Adjust this value down or up as preferred */
+}
 
+/* 3. Target and shrink ONLY the instructions text */
+.recipe .instrtn p {
+  font-size: 11px; /* Adjust this value down or up as preferred */
+}
+
+/* 1. Outer Container Box */
+.recipe {
+  border: 3px solid #111111; /* Thicker, dark outer frame */
+  padding: 15px; /* Padding creates the gap between outer and inner boxes */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px; /* Smoothly rounds the main outer corners */
+  background-color: #fafafa; /* Subtle background contrast for the main box */
+  
+  /* Vertical scrolling adjustments */
+  max-height: 80vh; /* Gives the card more height before scrolling */
+  overflow-y: auto; 
+}
+
+/* 2. Inner Content Boxes */
+.recipe .title, .recipe .ingred, .recipe .instrtn {
+  border: 1px solid #666666; /* Thinner, lighter internal borders */
+  padding: 10px; /* Padding keeps content clean inside inner boxes */
+  margin: 12px 0; /* Separation margin between the stacked inner boxes */
+  background-color: #ffffff; /* Solid white fill to make inner text pop */
+  border-radius: 4px; /* Slightly rounds the inner box corners */
+  box-sizing: border-box;
+}
+
+/* Structural rule to make the photo fit perfectly within the layer scheme */
+.recipe img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #666666; /* Gives the photo its own inner layer box */
+  border-radius: 4px;
+  margin: 12px 0;
+}
+
+/* Simple layout spacer for the final link */
+.recipe a {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: bold;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.recipe a:hover {
+  text-decoration: underline;
+}
+
+/* Customizes the scrollbar width for WebKit browsers (Chrome, Safari, Edge) */
+.recipe::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Customizes the draggable scrollbar handle */
+.recipe::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 4px;
+}
 /* ==========================================================================
    4. Content Blocks & Cards
    ========================================================================== */
@@ -109,6 +183,14 @@ body {
   height: auto; 
   display: block; 
 }
+
+/* ==========================================================================
+   4. Content Blocks & Cards
+   ========================================================================== */
+/* Smooth scrolling to anchor links */ 
+html { 
+    scroll-behavior: smooth; 
+} 
 
 /* ==========================================================================
    5. Footer
