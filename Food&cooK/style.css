@@ -2,15 +2,24 @@
   box-sizing: border-box; 
 }
 
-body { 
-  font-family: Arial, sans-serif; 
-  text-align: center; 
-  margin: 0; 
-  padding: 20px; 
-  display: flex; 
-  flex-direction: column; 
-  min-height: 100vh; 
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Polka Dot CSS Background Pattern */
+  background-color: #e0f2fe;   /* Soft, pleasant light blue background */
+  background-image: 
+    radial-gradient(#ffffff 15%, transparent 15%),
+    radial-gradient(#ffffff 15%, transparent 15%);
+  background-size: 24px 24px;  /* Spacing density: looks great spread across a big screen */
+  background-position: 0 0, 12px 12px; /* Offsets the dots so they alternate beautifully */
 }
+
 main {
   padding: 20px 0; /* 20px top/bottom, 0 left/right */
 }
@@ -84,10 +93,9 @@ main {
   box-sizing: border-box;
 }
 
-/* 1. Force the row to wrap exactly after 4 recipes */
+/* Flexible Base Row */
 .grid-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
   width: 100%;
 }
@@ -104,13 +112,14 @@ main {
 
 /* 1. Outer Container Box */
 .recipe {
-  border: 3px solid #111111; /* Thicker, dark outer frame */
-  padding: 15px; /* Padding creates the gap between outer and inner boxes */
+
+  border: 3px solid #111111;
+  padding: 15px;
   display: block;
   width: 100%;
   box-sizing: border-box;
-  border-radius: 8px; /* Smoothly rounds the main outer corners */
-  background-color: #fafafa; /* Subtle background contrast for the main box */
+  border-radius: 8px;
+  background-color: #fafafa;
   
   /* Vertical scrolling adjustments */
   max-height: 80vh; /* Gives the card more height before scrolling */
@@ -125,6 +134,16 @@ main {
   background-color: #ffffff; /* Solid white fill to make inner text pop */
   border-radius: 4px; /* Slightly rounds the inner box corners */
   box-sizing: border-box;
+}
+
+.recipe .timestamp {
+  font-size: 0.65em;           /* Scaled down to be 65% of the title box's text scale */
+  text-transform: uppercase;   
+  letter-spacing: 0.1em;       
+  color: #777777;              
+  text-align: left;            
+  margin: 0 0 4px 4px;         
+  font-weight: bold;           
 }
 
 /* Structural rule to make the photo fit perfectly within the layer scheme */
@@ -203,4 +222,44 @@ html {
 .site-name { 
   margin-right: 15px; 
   font-weight: bold; 
+}
+
+    /*<- - - - - - - - Media Queries - - - - - - - >*/
+/* ==========================================================================
+   Strict Multi-Step Breakpoints (1 to 5 Columns)
+   ========================================================================= */
+
+/* STEP 1: Smartphones (Up to 599px) -> 1 Column */
+@media screen and (max-width: 599px) {
+  .grid-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* STEP 2: Small Tablets (600px to 899px) -> 2 Columns */
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* STEP 3: Large Tablets / Landscape (900px to 1199px) -> 3 Columns */
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  .grid-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* STEP 4: Standard Desktops (1200px to 1599px) -> 4 Columns */
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .grid-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* STEP 5: Large/Ultrawide Desktops (1600px and up) -> 5 Columns */
+@media screen and (min-width: 1600px) {
+  .grid-row {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
