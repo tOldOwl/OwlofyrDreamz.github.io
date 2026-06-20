@@ -1,0 +1,319 @@
+* { 
+  box-sizing: border-box; 
+} 
+
+body { 
+      background-image: url("img/window.png");
+      background-repeat: repeat;
+      overflow: hidden;
+      height: 100%;
+  font-family: Arial, sans-serif; 
+  text-align: center; 
+  margin: 0; 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+} 
+
+/* 1. Global Page Reset & Viewport Locking */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;      /* Force layout to fit exactly on the screen */
+  overflow: hidden;   /* Eliminate all page-level scrollbars */
+  box-sizing: border-box; /* Padding shrinks inward, preventing layout blowout */
+}
+
+/* Apply box-sizing globally to all elements */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* 2. Body Grid: Creates a layout machine with uniform spacing padding */
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;      /* Adds padding around the entire page boundary */
+}
+
+/* ========================================== 2. HEADER & NAVIGATION CONTAINER STYLES ========================================== */ 
+.hdr { 
+    width: 100%;
+    letter-spacing: 0.3em; 
+    border: 2px solid #333333; 
+    
+    /* 1. LOWERED PADDING: Cut in half from 10px to 4px to pull the header boundaries closer together vertically */
+    padding: 4px 0; 
+
+    /* 2. THE CHASSIS: Added Flexbox setup directly here to center the internal tracking cleanly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 3. ORIGINAL GLASS EFFECT: Restored your translucent color setup */
+    background: rgba(255, 0, 0, 0.25); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+} 
+
+.hdr h1 { 
+    font-family: Cooper Std, Helvetica, Century Gothic; 
+    letter-spacing: 0.4em; 
+    text-align: center; 
+    font-size: 4rem; 
+
+    /* 4. TOTAL TRACKING RESET: Stripped the height 100% and display flex parameters which were throwing the layout baseline off center */
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+    display: block;
+}
+
+/* 3. Main Area: Automatically shrinks vertically to make room for the footer */
+.main {
+  flex: 1;
+  min-height: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the content vertically */
+  align-items: center;     /* Centers the content horizontally */
+  padding: 10px 0; 
+}
+
+.grid-row {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* 4. The Box: Perfect layout tracking for stacked items */
+.box-section {
+  border: 2px solid #333333;
+  border-radius: 6px;
+  flex: 1;
+  display: grid;
+  grid-template-areas: 'stack';
+  align-items: center;
+  justify-items: center;
+  min-height: 0;
+  padding: 15px;
+}
+
+/* 5. Image Container: Restrained to exactly half size */
+.box-image-wrapper {
+  grid-area: stack;
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 0; 
+  height: 100%;
+  max-height: 100%;
+}
+
+/* Preserves original dimensions and aspect ratio without stretching */
+.box-image-wrapper img {
+  max-width: 100%;       
+  max-height: 100%;      
+  width: auto;           
+  height: auto;          
+  object-fit: contain;   
+  display: block;
+}
+
+/* 6. Text Container: Placed over the image track */
+.box-text-wrapper {
+  grid-area: stack;
+  z-index: 2;
+  text-align: center;
+  pointer-events: none; /* Allows mouse clicks to pass right through the text */
+}
+
+.box-text-wrapper h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+
+
+/* Shared Base Styles for both Nav Outer Blocks */
+.book-nav, 
+.drty-nav { 
+  border: 2px solid #333333; 
+  padding: 15px; 
+  text-align: center; 
+} 
+
+/* - - - 3. INNER LIST & BUTTON MENUS  - - - - - */
+
+.bknw, 
+.nav-menu { 
+  list-style: none !important; 
+  list-style-type: none !important; 
+  padding: 0; 
+  margin: 0; 
+  width: 100%; 
+} 
+
+.nav-menu { 
+  font-size: 0; /* Clears inline whitespace tracking gaps */ 
+}
+
+/* Shared Nav Item Alignment Box */
+.bknw .nav-item, 
+.nav-menu .nav-item { 
+  display: inline-block; 
+  box-sizing: border-box; 
+  vertical-align: middle; 
+} 
+
+/* Sizing Variables for Main Menu vs Shrunk Button */
+.nav-menu .nav-item { 
+  width: 20%; 
+  margin: 0 1.5%; 
+} 
+
+.bknw .nav-item { 
+  width: 100%; 
+  margin: 0; 
+} 
+
+/* =========   4. BUTTON LINK & HOVER INTERACTIONS   ==================== */
+/* Shared Core Button Elements */
+.bknw .nav-item a, 
+.nav-menu .nav-item a { 
+  text-decoration: none; 
+  color: #000000; 
+  border: 1px solid #000000; 
+  border-radius: 4px; 
+  display: block; 
+  width: 100%; 
+  transition: background 0.2s ease, color 0.2s ease; 
+} 
+
+/* Main Menu Button Text & Height Sizing */
+.nav-menu .nav-item a { 
+  font-size: 16px; 
+  padding: 8px 0; 
+} 
+
+/* Book Now Shrunk Button Text & Height Sizing */
+.bknw .nav-item a { 
+  font-size: 1.25em; 
+  padding: 12px 0; 
+} 
+
+/* Hover Interactions */
+.nav-item a:hover { 
+  background: #000000; 
+  color: #ffffff; 
+} 
+ 
+
+/* ========================================== 5. BODY MAIN SECTIONS & FOOTER ========================================== */
+.main {
+  flex: 1;
+  min-height: 0; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+.grid-row {
+  flex: 1;
+  display: flex;
+  min-height: 0; 
+  width: 100%;
+  padding: 0;
+  gap: 20px;
+}
+
+.box-section {
+  flex: 1;
+  border: 2px solid #333333;
+  border-radius: 6px;
+  display: grid;
+  grid-template-areas: 'stack';
+  grid-template-rows: 100%;    
+  grid-template-columns: 100%; 
+  align-items: center;
+  justify-items: center;
+  padding: 15px;
+  min-height: 0; 
+  height: 100%; 
+}
+
+.box-content h3 {
+  margin-top: 0;
+}
+
+/* 5. Image Container: Clean invisible anchor for the stacking content */
+.box-image-wrapper {
+  grid-area: stack;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0; 
+}
+
+/* The Solution: Styles are placed directly on the image tag while its dimensions are locked to the vertical limits */
+.box-image-wrapper img {
+  height: 100%;               /* Force the image box to match the exact vertical limit of the container */
+  max-height: 100%;           /* Safety anchor for the main layout bounds */
+  width: auto;                /* Force the width of the box to shrink to match the image aspect ratio */
+  max-width: 100%;            /* Keeps it from blowing past side borders on narrow screens */
+  
+  /* Thick white border and shadow styles */
+  border: 8px solid #ffffff; 
+  border-radius: 16px;
+  
+  /* Soft, heavy drop shadow that moves with the border bounds */
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.45)); 
+}
+
+.ftr {
+  border: 1px solid #000000;
+  padding: 15px 0;
+}
+
+.site-name {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* - - - 3. Media Queries for Screen Sizes  - - - - - */
+/* Target devices smaller than 768px (tablets and phones) */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px; /* Shrinks the vertical and horizontal space inside the header */
+    min-height: auto;   /* Prevents the header from forcing a tall fixed height */
+  }
+
+  /* Shrink the main title or logo text */
+  header h1, .header-title {
+    font-size: 1.5rem;  /* Reduces the font size on smaller screens */
+  }
+
+  /* Scale down any logo images */
+  header img {
+    max-height: 40px;   /* Caps the height of your logo so it doesn't stay huge */
+    width: auto;        /* Keeps the image aspect ratio correct */
+  }
+
+  /* Stack navigation links vertically or hide them */
+  header nav a {
+    font-size: 14px;    /* Makes navigation text smaller */
+    padding: 5px;       /* Puts links closer together */
+  }
+}

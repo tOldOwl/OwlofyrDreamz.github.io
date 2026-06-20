@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    Form {
+      font-family: Century Gothic, Helvetica;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+      height: 85vh;
+      width: 30vh;
+      padding: 3vh;
+      box-shadow: 8px 8px 10px 8px #333333;
+      margin: -3% auto;
+    }
+    fieldset {
+      background-color: white;
+      border-radius: 8px;
+    }
+    .angled-background-container {
+      background-color: rgba(169, 166, 224, 1);
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      padding: 60px;
+    }
+    .angled-background-container::before {
+      content: '';
+      position: absolute;
+      top: -25%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: url(emailicon01.png);
+      background-repeat: repeat;
+      transform: rotate(-15deg);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="angled-background-container">
+  <form action="https://webdevbasics.net/scripts/demo.php" method="post">
+<fieldset>
+    <label for="">First Name:<br></label>
+    <input type="text" name="First_Name" id="First_Name" size="" maxlength="">
+      <br>
+    <label for="">Last Name:<br></label>
+    <input type="text" name="Last_Name" id="Last_Name" size="" maxlength="">
+</fieldset><fieldset>
+    <input type="radio" name="gender" value="female" id="female"><label for="female">Female</label>
+      &nbsp;
+    <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label><br>
+</fieldset>
+<fieldset>
+    <label for="">Email:<br></label>
+    <input type="text" name="Email" id="Email" size="" maxlength="">
+      <br>
+    <label for="">Phone#:<br></label>
+    <input type="text" name="Phone#" id="Phone#" size="" maxlength="">
+</fieldset>
+      <br>
+<fieldset>
+    <legend>Contact Availability</legend>
+    <input type="checkbox" id="myCheckbox" name="option1" value="value1">
+    <label for="myCheckbox">Noon</label>
+      <br>
+    <input type="checkbox" id="myCheckbox" name="option1" value="value1">
+    <label for="myCheckbox">Afternoon</label>
+      <br>
+    <input type="checkbox" id="myCheckbox" name="option1" value="value1">
+    <label for="myCheckbox">evening</label>
+</fieldset>
+      <br>
+<legend>Topic/Purpose</legend>
+<select name="Purpose" id="" multiple size="1">
+<option value="none">Please Select One</option>
+<option value="none">Price</option>
+<option value="none">Appointment</option>
+<option value="none">Transaction</option>
+<option value="none">Schedule</option>
+<option value="none">Haircuts</option>
+</select><br>
+      <br>
+    <label for="Messege">Messege:</label><br>
+    <textarea id="Messege" name="Messege" rows="6" cols="25" placeholder="">
+    </textarea><br>
+    <button type="submit">Send</button>
+      <br>
+    <button type="reset">Clear</button>
+  </form>
+</body>
+</html>
